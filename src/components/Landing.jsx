@@ -11,6 +11,7 @@ const Landing = () => {
         <input type="text" placeholder="Search by title or keyword"></input>
         <button class="search__btn">Search</button>
       </div>
+      <h1>My Recommendations</h1>
     </div>
   );
 };
