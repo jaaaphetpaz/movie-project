@@ -1,5 +1,5 @@
+import Footer from './components/Footer';
 import Landing from './components/Landing';
-import MovieCard from './components/MovieCard';
 import Nav from './components/Nav';
 import Recommended from './components/Recommended';
 
@@ -9,6 +9,7 @@ function App() {
     <Nav />
     <Landing />
     <Recommended />
+    <Footer />
     
     </>
   );
