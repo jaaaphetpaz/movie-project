@@ -31,9 +31,7 @@ i {
     max-width: 1200px;
 }
 
-.navbar {
-    height: 20vh;
-}
+
 .nav__content-wrapper {
     color: #242424;
     display: flex;
@@ -92,7 +90,6 @@ i {
     font-family: 'Rubik', sans-serif;
     text-align: center;
     padding-top:20px;
-    height: 80vh;
     
 }
 
@@ -114,7 +111,6 @@ i {
 
 .recommended {
     text-align: center;
-    height: 100vh;
 }
 
 .arrow {
