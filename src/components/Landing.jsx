@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import MovieImg from "../assets/MovieImg.svg";
 
-const Landing = () => {
-  const [searchKey, setSearchKey] = useState([]);
-
-  console.log(searchKey);
+const Landing = (props) => {
+  const { clic, setSearchKey } = props;
 
   return (
     <div className="landing">

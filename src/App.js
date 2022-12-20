@@ -1,4 +1,5 @@
 import Footer from './components/Footer';
+import React, {useState} from 'react';
 import Home from './components/Home';
 import Landing from './components/Landing';
 import Nav from './components/Nav';
@@ -9,19 +10,14 @@ import Search from './components/Search';
 function App() {
 
 
-
-
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path='/' element={<Home />}/>
-    //     <Route path='/search' element={<Search />}/>
-    //   </Routes>
-    // </Router>
-    <>
-    <Recommended />
-    <Search />
-    </>
+
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/search' element={<Search />} />
+      </Routes>
+    </Router>
     
   );
 }
