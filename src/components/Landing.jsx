@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import MovieImg from "../assets/MovieImg.svg";
 
 const Landing = (props) => {
@@ -12,12 +13,11 @@ const Landing = (props) => {
       <img src={MovieImg} alt="" />
 
       <div className="input__wrapper">
-        <input
-          onChange={(event) => setSearchKey(event.target.value)}
-          type="text"
-          placeholder="Search by title or keyword"
-        ></input>
-        <button className="search__btn">Search</button>
+        <Link to={"/search"}>
+          <button className="landing__btn">
+            Start looking for your next show!
+          </button>
+        </Link>
       </div>
       <h2 className="landing__subtitle">
         Find your new favourite shows and movies here!

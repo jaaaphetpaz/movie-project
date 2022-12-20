@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Search = (props) => {
   const {} = props;
@@ -23,6 +24,9 @@ const Search = (props) => {
 
   return (
     <>
+      <Link to={"/"}>
+        <button>Back</button>
+      </Link>
       <input
         type="text"
         placeholder="Search by title or keyword"
