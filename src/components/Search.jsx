@@ -1,8 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Search = (props) => {
   const { movies, setSearchKey, onSearch } = props;
+  const [movieInfo, setMovieInfo] = useState([]);
+  const [movieImdb, setMovieImdb] = useState([]);
+
+  const getMovieInfo = async (id) => {
+    const response = await axios.get(
+      `https://www.omdbapi.com/?i=${id}&apikey=63d0f37b`
+    );
+    console.log(response.data);
+  };
 
   return (
     <>
@@ -29,7 +39,11 @@ const Search = (props) => {
       <div>
         <div className="movies">
           {movies.map((movie) => (
-            <div key={movie.imdbId} className="movie__card">
+            <div
+              key={movie.imdbID}
+              className="movie__card"
+              onClick={() => getMovieInfo(movie.imdbID)}
+            >
               <div className="movie__wrap">
                 <img className="movie__pos" src={movie.Poster} alt="Poster" />
                 <h3>{movie.Title}</h3>
