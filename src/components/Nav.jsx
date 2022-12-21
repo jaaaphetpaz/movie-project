@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import jpzLogo from "../assets/jpzLogo.png";
 import "./style.css";
 
@@ -14,9 +15,12 @@ const Nav = () => {
           />
         </div>
         <ul className="linkz">
-          <li className="link">
-            Home<i className="fas fa-home"></i>
-          </li>
+          <Link to="/">
+            <li className="link">
+              Home<i className="fas fa-home"></i>
+            </li>
+          </Link>
+
           <li className="link">
             Movies<i className="fas fa-film"></i>
           </li>

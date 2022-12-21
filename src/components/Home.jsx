@@ -4,11 +4,17 @@ import Landing from "./Landing";
 import Nav from "./Nav";
 import Recommended from "./Recommended";
 
-const Home = () => {
+const Home = (props) => {
+  const { searchKey, setSearchKey, getMovies, onSearch } = props;
+
   return (
     <div>
       <Nav />
-      <Landing />
+      <Landing
+        searchKey={searchKey}
+        setSearchKey={setSearchKey}
+        onSearch={onSearch}
+      />
       <Recommended />
       <Footer />
     </div>

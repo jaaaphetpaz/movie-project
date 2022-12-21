@@ -72,7 +72,7 @@ i {
     margin: 10px;
 }
 
-.search__btn, .landing__btn {
+.search__btn, .landing__btn, .back__btn {
     color: black;
     font-size: 26px;
     border-radius: 12px;
