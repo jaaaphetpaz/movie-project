@@ -1,6 +1,8 @@
 import React from "react";
 
 const MovieCard = ({ title, year, poster }) => {
+  function goToImdb(id) {}
+
   return (
     <div className="movie__card">
       <div className="movie__wrap">
