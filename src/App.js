@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import axios from 'axios';
 import Home from './components/Home';
 import Search from './components/Search';
+import DrawerSearch from './components/DrawerSearch';
 
 function App() {
 
@@ -25,25 +26,28 @@ function App() {
   }, []);
 
 
-  return (
 
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home 
-        searchKey={searchKey} 
-        setSearchKey={setSearchKey} 
-        getMovies={getMovies} 
-        onSearch={onSearch} />}
-        />
-        <Route path='/search' element={<Search 
-        movies={movies} 
-        searchKey={searchKey} 
-        setSearchKey={setSearchKey} 
-        getMovies={getMovies} 
-        onSearch={onSearch}  />} 
-        />
-      </Routes>
-    </Router>
+  return (
+    <>
+   <Router>
+     <Routes>
+       <Route path='/' element={<Home 
+       searchKey={searchKey} 
+       setSearchKey={setSearchKey} 
+       getMovies={getMovies} 
+       onSearch={onSearch} />}
+       />
+       <Route path='/search' element={<Search 
+       movies={movies} 
+       searchKey={searchKey} 
+       setSearchKey={setSearchKey} 
+       getMovies={getMovies} 
+       onSearch={onSearch}  />} 
+       />
+     </Routes>
+   </Router>
+
+    </>
     
   );
 }

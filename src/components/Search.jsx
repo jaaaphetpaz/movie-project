@@ -1,16 +1,23 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import DrawerSearch from "./DrawerSearch";
 
 const Search = (props) => {
   const { movies, setSearchKey, onSearch } = props;
   const [movieInfo, setMovieInfo] = useState([]);
   const [movieImdb, setMovieImdb] = useState([]);
+  const [open, setOpen] = useState(false);
+
+  const onClose = () => {
+    setOpen(false);
+  };
 
   const getMovieInfo = async (id) => {
     const response = await axios.get(
       `https://www.omdbapi.com/?i=${id}&apikey=63d0f37b`
     );
+    setMovieInfo(response.data);
     console.log(response.data);
   };
 
@@ -42,7 +49,7 @@ const Search = (props) => {
             <div
               key={movie.imdbID}
               className="movie__card"
-              onClick={() => getMovieInfo(movie.imdbID)}
+              onClick={() => (getMovieInfo(movie.imdbID), setOpen(true))}
             >
               <div className="movie__wrap">
                 <img className="movie__pos" src={movie.Poster} alt="Poster" />
@@ -53,6 +60,12 @@ const Search = (props) => {
           ))}
         </div>
       </div>
+      <DrawerSearch
+        movieInfo={movieInfo}
+        open={open}
+        setOpen={setOpen}
+        onClose={onClose}
+      />
     </>
   );
 };
