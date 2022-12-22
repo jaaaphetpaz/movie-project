@@ -1,7 +1,9 @@
-import axios from "axios";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import DrawerSearch from "./DrawerSearch";
+import axios from "axios";
 
 const Search = (props) => {
   const { movies, setSearchKey, onSearch } = props;
@@ -25,7 +27,10 @@ const Search = (props) => {
     <>
       <div>
         <Link to={"/"}>
-          <button className="back__btn">Back</button>
+          <button className="back__btn">
+            <FontAwesomeIcon icon={faArrowLeft} />
+            Back
+          </button>
         </Link>
       </div>
       <div className="input__wrapper">

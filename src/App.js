@@ -4,6 +4,7 @@ import axios from 'axios';
 import Home from './components/Home';
 import Search from './components/Search';
 import DrawerSearch from './components/DrawerSearch';
+import "./components/style.css"
 
 function App() {
 

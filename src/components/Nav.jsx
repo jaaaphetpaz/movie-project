@@ -15,12 +15,9 @@ const Nav = () => {
           />
         </div>
         <ul className="linkz">
-          <Link to="/">
-            <li className="link">
-              Home<i className="fas fa-home"></i>
-            </li>
-          </Link>
-
+          <li className="link">
+            Home<i className="fas fa-home"></i>
+          </li>
           <li className="link">
             Movies<i className="fas fa-film"></i>
           </li>

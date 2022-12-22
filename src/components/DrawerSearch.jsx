@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Drawer } from "antd";
 
 const DrawerSearch = (props) => {
-  const { movieInfo, open, setOpen, onClose } = props;
+  const { movieInfo, open, onClose } = props;
 
   return (
     <>
@@ -25,10 +25,19 @@ const DrawerSearch = (props) => {
           src={`${movieInfo.Poster}`}
           alt=""
         />
+
         <h4>Genre: </h4>
         {`${movieInfo.Genre}`}
         <h4>Plot: </h4>
         {`${movieInfo.Plot}`}
+        <h4>Runtime: </h4>
+        {`${movieInfo.Runtime}`}
+        <h4>Rated: </h4>
+        {`${movieInfo.Rated}`}
+        <h4>Director: </h4>
+        {`${movieInfo.Director}`}
+        <h4>Awards: </h4>
+        {`${movieInfo.Awards}`}
       </Drawer>
     </>
   );
