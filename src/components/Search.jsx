@@ -37,6 +37,7 @@ const Search = (props) => {
       </div>
       <div className="input__wrapper">
         <input
+          required
           type="text"
           placeholder="Search by title or keyword"
           onChange={(event) => setSearchKey(event.target.value)}
@@ -56,6 +57,7 @@ const Search = (props) => {
           Search results for:
           <span style={{ fontWeight: "normal" }}> "{updatedKey}"</span>
         </h2>
+
         <div className="movies">
           {movies.map((movie) => (
             <div

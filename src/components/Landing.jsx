@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import MovieImg from "../assets/MovieImg.svg";
 
 const Landing = (props) => {
   const { setSearchKey, onSearch } = props;
+  const navigate = useNavigate();
 
   return (
     <div className="landing">
@@ -18,11 +19,13 @@ const Landing = (props) => {
 
       <div className="input__wrapper">
         <input
+          required
           type="text"
           placeholder="Search by title or keyword"
           onChange={(event) => setSearchKey(event.target.value)}
           onKeyPress={(event) => {
             if (event.key === "Enter") {
+              navigate("/search");
               onSearch();
             }
           }}

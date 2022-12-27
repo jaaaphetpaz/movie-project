@@ -9,23 +9,43 @@ import "./components/style.css"
 function App() {
 
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState([]);
   const [updatedKey, setUpdatedKey] = useState([]);
   const [searchKey, setSearchKey] = useState([]);
 
-  const getMovies = async (key) => {
-  const response = await axios.get(
-    `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
-  )
-  setMovies(response.data.Search);
+//   const getMovies = async (key) => {
+//    const response = await axios.get(
+//     `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
+//   )
+//   setMovies(response.data.Search); 
+// };
+
+const getMovies = async (key) => {
+  
+    const response = await axios.get(
+      `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
+    );
+    if (response.data.Response === "True"){
+      setMovies(response.data.Search);
+    } else {
+      alert('Invalid keyword or too many search results try again.')
+    }
+    
 };
 
+
   const onSearch = () => {
+    if (searchKey.length > 0) {
     getMovies(searchKey)
-    setUpdatedKey(searchKey)
+    setUpdatedKey(searchKey) } else {
+      alert('Please enter a valid keyword.')
+    }
+    
+    
   }
 
   useEffect(() => {
-    getMovies("fast");
+    getMovies();
   }, []);
 
 
