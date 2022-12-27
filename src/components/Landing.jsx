@@ -4,7 +4,6 @@ import MovieImg from "../assets/MovieImg.svg";
 
 const Landing = (props) => {
   const { setSearchKey, onSearch } = props;
-  const navigate = useNavigate();
 
   return (
     <div className="landing">
@@ -25,7 +24,6 @@ const Landing = (props) => {
           onChange={(event) => setSearchKey(event.target.value)}
           onKeyPress={(event) => {
             if (event.key === "Enter") {
-              navigate("/search");
               onSearch();
             }
           }}

@@ -57,8 +57,32 @@ const Search = (props) => {
           Search results for:
           <span style={{ fontWeight: "normal" }}> "{updatedKey}"</span>
         </h2>
+        {(!updatedKey || !updatedKey.length) && (
+          <div style={{ height: "40vh" }}>
+            <h1 style={{ textAlign: "center" }}>
+              Please enter a valid keyword
+            </h1>
+          </div>
+        )}
+        {updatedKey && updatedKey.length > 0 && (
+          <div className="movies">
+            {movies.map((movie) => (
+              <div
+                key={movie.imdbID}
+                className="movie__card"
+                onClick={() => (getMovieInfo(movie.imdbID), setOpen(true))}
+              >
+                <div className="movie__wrap">
+                  <img className="movie__pos" src={movie.Poster} alt="Poster" />
+                  <h3>{movie.Title}</h3>
+                  <h4>{movie.Year}</h4>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
-        <div className="movies">
+        {/* <div className="movies">
           {movies.map((movie) => (
             <div
               key={movie.imdbID}
@@ -72,7 +96,7 @@ const Search = (props) => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <DrawerSearch
         movieInfo={movieInfo}

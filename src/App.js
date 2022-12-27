@@ -7,9 +7,7 @@ import DrawerSearch from './components/DrawerSearch';
 import "./components/style.css"
 
 function App() {
-
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState([]);
   const [updatedKey, setUpdatedKey] = useState([]);
   const [searchKey, setSearchKey] = useState([]);
 
@@ -37,7 +35,8 @@ const getMovies = async (key) => {
   const onSearch = () => {
     if (searchKey.length > 0) {
     getMovies(searchKey)
-    setUpdatedKey(searchKey) } else {
+    setUpdatedKey(searchKey)
+     } else {
       alert('Please enter a valid keyword.')
     }
     
