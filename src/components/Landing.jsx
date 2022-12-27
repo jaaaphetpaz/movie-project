@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import MovieImg from "../assets/MovieImg.svg";
-import axios from "axios";
 
 const Landing = (props) => {
-  const { setSearchKey, searchKey, onSearch } = props;
+  const { setSearchKey, onSearch } = props;
 
   return (
     <div className="landing">
@@ -12,6 +11,10 @@ const Landing = (props) => {
         Time to get ready for an epic movie night!
       </h1>
       <img src={MovieImg} alt="" />
+
+      <h2 className="landing__subtitle">
+        Find your new favourite shows and movies here!
+      </h2>
 
       <div className="input__wrapper">
         <input
@@ -34,10 +37,7 @@ const Landing = (props) => {
           </button> */}
         </Link>
       </div>
-      <h2 className="landing__subtitle">
-        Find your new favourite shows and movies here!
-      </h2>
-      <h1 className="arrow">⬇</h1>
+
       <br />
       <br />
       <br />

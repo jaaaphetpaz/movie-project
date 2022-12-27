@@ -9,17 +9,19 @@ import "./components/style.css"
 function App() {
 
   const [movies, setMovies] = useState([]);
+  const [updatedKey, setUpdatedKey] = useState([]);
   const [searchKey, setSearchKey] = useState([]);
 
   const getMovies = async (key) => {
-    const response = await axios.get(
-      `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
-    );
-    setMovies(response.data.Search);
-  };
+  const response = await axios.get(
+    `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
+  )
+  setMovies(response.data.Search);
+};
 
   const onSearch = () => {
     getMovies(searchKey)
+    setUpdatedKey(searchKey)
   }
 
   useEffect(() => {
@@ -43,7 +45,8 @@ function App() {
        searchKey={searchKey} 
        setSearchKey={setSearchKey} 
        getMovies={getMovies} 
-       onSearch={onSearch}  />} 
+       onSearch={onSearch}
+       updatedKey={updatedKey}  />} 
        />
      </Routes>
    </Router>

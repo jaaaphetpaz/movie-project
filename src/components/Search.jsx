@@ -4,11 +4,12 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import DrawerSearch from "./DrawerSearch";
 import axios from "axios";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
 const Search = (props) => {
-  const { movies, setSearchKey, onSearch } = props;
+  const { movies, setSearchKey, onSearch, updatedKey } = props;
   const [movieInfo, setMovieInfo] = useState([]);
-  const [movieImdb, setMovieImdb] = useState([]);
   const [open, setOpen] = useState(false);
 
   const onClose = () => {
@@ -25,6 +26,7 @@ const Search = (props) => {
 
   return (
     <>
+      <Nav />
       <div>
         <Link to={"/"}>
           <button className="back__btn">
@@ -48,7 +50,12 @@ const Search = (props) => {
           Search
         </button>
       </div>
+
       <div>
+        <h2 style={{ marginLeft: "80px" }}>
+          Search results for:
+          <span style={{ fontWeight: "normal" }}> "{updatedKey}"</span>
+        </h2>
         <div className="movies">
           {movies.map((movie) => (
             <div
@@ -71,6 +78,7 @@ const Search = (props) => {
         setOpen={setOpen}
         onClose={onClose}
       />
+      <Footer />
     </>
   );
 };
