@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MovieImg from "../assets/MovieImg.svg";
 
 const Landing = (props) => {
@@ -11,7 +11,6 @@ const Landing = (props) => {
         Time to get ready for an epic movie night!
       </h1>
       <img src={MovieImg} alt="" />
-
       <h2 className="landing__subtitle">
         Find your new favourite shows and movies here!
       </h2>

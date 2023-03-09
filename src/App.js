@@ -11,13 +11,6 @@ function App() {
   const [updatedKey, setUpdatedKey] = useState([]);
   const [searchKey, setSearchKey] = useState([]);
 
-//   const getMovies = async (key) => {
-//    const response = await axios.get(
-//     `https://www.omdbapi.com/?i=tt3896198&apikey=63d0f37b&s=${key}`
-//   )
-//   setMovies(response.data.Search); 
-// };
-
 const getMovies = async (key) => {
   
     const response = await axios.get(
