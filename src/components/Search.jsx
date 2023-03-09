@@ -74,7 +74,7 @@ const Search = (props) => {
               >
                 <div className="movie__wrap">
                   <img className="movie__pos" src={movie.Poster} alt="Poster" />
-                  <h3>{movie.Title}</h3>
+                  <h3 style={{ textAlign: "center" }}>{movie.Title}</h3>
                   <h4>{movie.Year}</h4>
                 </div>
               </div>
