@@ -8,11 +8,7 @@ const Nav = () => {
     <div className="navbar">
       <div className="nav__content-wrapper">
         <div className="logo">
-          <img
-            style={{ width: "auto", height: "100px" }}
-            src={jpzLogo}
-            alt=""
-          />
+          <img className="nav__img" src={jpzLogo} alt="" />
         </div>
         <ul className="linkz">
           <li className="link">

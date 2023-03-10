@@ -10,7 +10,7 @@ const Landing = (props) => {
       <h1 className="landing__title">
         Time to get ready for an epic movie night!
       </h1>
-      <img src={MovieImg} alt="" />
+      <img className="landing__img" src={MovieImg} alt="" />
       <h2 className="landing__subtitle">
         Find your new favourite shows and movies here!
       </h2>
